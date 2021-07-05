@@ -7,13 +7,21 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
 import { PrefixNgPipe } from './myPipes/prefix-ng.pipe';
+import { NavbarComponent } from './navbar/navbar.component';
+import { AddProviderComponent } from './add-provider/add-provider.component';
+import { ListProviderComponent } from './list-provider/list-provider.component';
+import { UpdateProviderComponent } from './update-provider/update-provider.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     ContactComponent,
-    PrefixNgPipe
+    PrefixNgPipe,
+    NavbarComponent,
+    AddProviderComponent,
+    ListProviderComponent,
+    UpdateProviderComponent
   ],
   imports: [
     BrowserModule,
