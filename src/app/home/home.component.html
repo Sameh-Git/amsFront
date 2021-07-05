@@ -1,0 +1,10 @@
+  
+<h2>Composant HOME</h2>
+<img width="100" [src]="image"/>
+
+<h4>Liste de contenu du Day 4 : Matin</h4>
+<ul>
+
+  <li *ngFor="let s of contenu">{{s | uppercase |prefixNg}}</li>
+</ul>
+<button  class="btn btn-primary" (click)="info()">Cliquer pour afficher un message</button>

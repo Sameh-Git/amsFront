@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'amsFront';
+  title : string = 'Application AMS v1.0';
+  formation : string = "Angular";
+  vh: number = 40;
 }
