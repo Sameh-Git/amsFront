@@ -1,1 +1,11 @@
 <h2>Composant CONTACT</h2>
+
+
+
+<input type="text" [(ngModel)]="providerName" /> <br/>
+<input type="text" [(ngModel)]="providerEmail" /><br/>
+Infos Provider : {{providerName}} - {{providerEmail}}
+<br/>
+
+<button (click)="info()" class="btn btn-success">Nouvelles Valeurs provider</button>
+<hr/>
