@@ -1,6 +1,18 @@
 <h2>Composant CONTACT</h2>
 
+<h3>Template Driven Form</h3>
+<h4>Ajout d'un etudiant</h4>
 
+<form #f="ngForm" (ngSubmit)="submit(f)">
+    <label>Nom : </label><input type="text" ngModel name="nomEtudiant"/>
+    <br>
+    <label>Prenom : </label><input type="text" ngModel name="prenomEtudiant"/>
+    <br>
+    <input type="submit" value="Ajouter" class="btn btn-success" />
+  </form>
+  
+  
+  <hr/>
 
 <input type="text" [(ngModel)]="providerName" /> <br/>
 <input type="text" [(ngModel)]="providerEmail" /><br/>

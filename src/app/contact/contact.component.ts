@@ -17,5 +17,9 @@ export class ContactComponent implements OnInit {
   info(){
     alert(this.providerName + "-"+ this.providerEmail);
   }
+  submit(myform:any){
+    alert(myform.value.nomEtudiant + " "+myform.value.prenomEtudiant);
+   }
+ }
 
-}
+
