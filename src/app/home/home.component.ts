@@ -17,10 +17,23 @@ export class HomeComponent implements OnInit {
    
    }
    etudiants : string[] = [];
+   users:any;
+   providers:any;
   ngOnInit(): void {
     console.log("ngOnInit");
     //console.log(this.service.listCandidats());
     this.etudiants = this.service.listCandidats();
+    this.service.listUsers().subscribe(
+      data =>{
+       // console.log(data);
+       this.users = data;
+      }
+    );
+    this.service.listProviders().subscribe(
+      res =>{
+        //console.log(res);
+        this.providers = res;}
+    );
   }
 
   info(){

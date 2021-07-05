@@ -14,3 +14,14 @@
 <ul>
   <li *ngFor="let e of etudiants">{{e}}</li>
 </ul>
+
+<h4 align="center">Liste des Providers</h4>
+<table class="table table table-bordered">
+  <tr><th>ID</th><th>Name</th><th>Address</th><th>Email</th></tr>
+ <tr *ngFor="let p of providers">
+     <td>{{p.id}}</td>
+     <td>{{p.name}}</td>
+     <td>{{p.address}}</td>
+     <td>{{p.email}}</td>
+ </tr>
+</table>
