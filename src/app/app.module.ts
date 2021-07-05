@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { ContactComponent } from './contact/contact.component';
-import { PrefixNgPipe } from './prefix-ng.pipe';
+import { PrefixNgPipe } from './myPipes/prefix-ng.pipe';
 
 @NgModule({
   declarations: [

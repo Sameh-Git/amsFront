@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {EtudiantService} from '../services/etudiant.service'
 
 @Component({
   selector: 'app-home',
@@ -11,12 +12,15 @@ export class HomeComponent implements OnInit {
  contenu : string[] =["String interpolation :{{}}", "Property Binding : []", "Event Binding : ()","Two Way Data Binding [()]","Directives : *ngFor, *ngIf","Pipes : |"];
 
  
- constructor() {
-    console.log("Constructor!!")
+ constructor(private service : EtudiantService) {
+    console.log("Constructor!!");
+   
    }
-
+   etudiants : string[] = [];
   ngOnInit(): void {
-    console.log("ngOnInit")
+    console.log("ngOnInit");
+    //console.log(this.service.listCandidats());
+    this.etudiants = this.service.listCandidats();
   }
 
   info(){
