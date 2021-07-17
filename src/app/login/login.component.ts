@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router, ActivatedRoute} from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
 
 
@@ -17,14 +17,25 @@ export class LoginComponent implements OnInit {
   successMessage = "Authentication success";
   errorMessage = "Invalide username or password";
   constructor(private router: Router,
-  private loginservice: AuthenticationService) { }
+    private loginservice: AuthenticationService) { }
   ngOnInit() {
   }
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)) {
-      this.router.navigate([''])
-      } else
-      this.invalidLogin = true
+
+    (this.loginservice.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate(['listProviders'])
+        this.invalidLogin = false
+      },
+      error => {
+        this.invalidLogin = true
       }
+    )
+    );
+    /* if (this.loginservice.authenticate(this.username, this.password)) {
+       this.router.navigate(['listProviders'])
+       } else
+       this.invalidLogin = true*/
+  }
 
 }

@@ -14,6 +14,9 @@ import { UpdateProviderComponent } from './update-provider/update-provider.compo
 import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import{BasicAuthInterceptorService} from  './services/basic-auth-interceptor.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +37,13 @@ import { LogoutComponent } from './logout/logout.component';
     FormsModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: BasicAuthInterceptorService,
+      multi: true
+      }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
