@@ -12,25 +12,20 @@ export class AddProviderComponent implements OnInit {
 
 
   provider: any;
-  providers: any;
+  
   constructor(private service: ProviderService, private router : Router) { }
   ngOnInit(): void {}
     
 
-  createProvider(myform: { value: { providerName: any; providerEmail: any; providerAdress: any; }; }) {
+  createProvider(myform: any) {
     this.service.createProvider(myform).subscribe(
     response => {
     console.log(response);
+    this.router.navigate(['listProviders']);
     }
     );
-    this.router.navigate(['listProvider']);
+   
     }
-    refreshListProviders() {
-      this.service.listProviders().subscribe(
-      response => {
-      this.providers = response;
-      }
-      );
-      }
+    
 
 }

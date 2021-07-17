@@ -9,7 +9,7 @@ import { UpdateProviderComponent } from './update-provider/update-provider.compo
 const routes: Routes = [
   
   { path: "", pathMatch: "full", redirectTo: "app-navbar" },
-    { path: "listProvider", component: ListProviderComponent },
+    { path: "listProviders", component: ListProviderComponent },
     { path: "addProvider", component: AddProviderComponent },
     { path: "updateProvider/:id", component: UpdateProviderComponent },
     {path:"contact", component:ContactComponent},

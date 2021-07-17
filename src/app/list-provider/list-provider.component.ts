@@ -15,15 +15,15 @@ export class ListProviderComponent implements OnInit {
   providers: any;
 
   ngOnInit(){
-    this.service.listProviders().subscribe(
+   /* this.service.listProviders().subscribe(
       response => {
       this.providers = response;
       }
-      );
+      );*/
 
      
 
-      
+      this.refreshListProviders();
   }
   
   deleteProvider(myObj: any) {

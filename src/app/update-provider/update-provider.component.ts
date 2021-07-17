@@ -20,18 +20,21 @@ ngOnInit() {
   this.route.paramMap.subscribe(
   params => {
   this.id = params.get('id');
-
-  }
-  );
   this.providerToUpdate = this.service.getProvider(this.id).subscribe(
-  response => {
-  //console.log(response);
+    response => {
+  console.log(response);
+  this.name = response["name"];
+  this.email = response["email"];
+  this.adress = response["address"];
+   
+    
+    }
+    );
 
- 
-  
   }
   );
-  // this.initFormUpdateProvider(myform);
+
+
   }
   updateProvider() {
   this.providerToUpdate = {
@@ -43,9 +46,10 @@ ngOnInit() {
   this.service.updateProvider(this.providerToUpdate).subscribe(
   response => {
   console.log(response);
+  this.router.navigate(['listProviders']);
   }
   );
-  this.router.navigate(['listProvider']);
+  
 }
 }
 
