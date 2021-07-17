@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 
 
@@ -12,7 +13,7 @@ export class ProviderService {
 
   constructor(private Http: HttpClient) { }
   listProviders() {
-    return this.Http.get(this.urlProviders + '/list');
+    return this.Http.get(environment.urlProviders + '/list');
     }
     createProvider(myform: { value: { providerName: any; providerEmail: any; providerAdress: any; }; }) {
       this.provider = {
@@ -20,19 +21,19 @@ export class ProviderService {
       'email': myform.value.providerEmail,
       'address': myform.value.providerAdress
       }
-      return this.Http.post(this.urlProviders + '/add', this.provider);
+      return this.Http.post(environment.urlProviders + '/add', this.provider);
       }
 
       deleteProvider(myObj: any) {
-        return this.Http.delete(this.urlProviders + '/' + myObj['id'])
+        return this.Http.delete(environment.urlProviders + '/' + myObj['id'])
       }
 
      
       updateProvider(myObj : any) {
-        return this.Http.put(this.urlProviders + '/' + myObj['id'], myObj);
+        return this.Http.put(environment.urlProviders + '/' + myObj['id'], myObj);
         }
 
         getProvider(id : any) {
-          return this.Http.get(this.urlProviders + '/' + id)
+          return this.Http.get(environment.urlProviders + '/' + id)
           }
 }

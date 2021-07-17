@@ -4,6 +4,8 @@ import { AddProviderComponent } from './add-provider/add-provider.component';
 import { ContactComponent } from './contact/contact.component';
 import { HomeComponent } from './home/home.component';
 import { ListProviderComponent } from './list-provider/list-provider.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
 
 const routes: Routes = [
@@ -12,6 +14,8 @@ const routes: Routes = [
     { path: "listProviders", component: ListProviderComponent },
     { path: "addProvider", component: AddProviderComponent },
     { path: "updateProvider/:id", component: UpdateProviderComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'logout', component: LogoutComponent },
     {path:"contact", component:ContactComponent},
     {path:"home",component:HomeComponent}];
 
