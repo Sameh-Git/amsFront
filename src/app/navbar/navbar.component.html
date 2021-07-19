@@ -14,6 +14,8 @@
           routerLinkActive="active">Ajouter</a>
         <a class="nav-item nav-link" routerLink="/login" *ngIf="!loginService.isUserLoggedIn()"
           routerLinkActive="active">Login</a>
+          <a class="nav-item nav-link" routerLink="/registration" *ngIf="!loginService.isUserLoggedIn()"
+          routerLinkActive="active">Registration</a>
         <a class="nav-item nav-link" routerLink="/logout" *ngIf="loginService.isUserLoggedIn()"
           routerLinkActive="active">LogOut</a>
   

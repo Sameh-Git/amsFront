@@ -8,6 +8,7 @@ import { LoginComponent } from './login/login.component';
 import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './services/authgaurd.service';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
     { path: "addProvider", component: AddProviderComponent, canActivate: [AuthGaurdService] },
     { path: "updateProvider/:id", component: UpdateProviderComponent, canActivate: [AuthGaurdService] },
     { path: 'login', component: LoginComponent },
+    { path: 'registration', component: RegistrationComponent },
     { path: 'logout', component: LogoutComponent , canActivate: [AuthGaurdService]},
     {path:"contact", component:ContactComponent},
     {path:"home",component:HomeComponent}];
