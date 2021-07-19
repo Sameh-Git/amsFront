@@ -1,5 +1,6 @@
 export const environment = {
   production: true,
-  urlProviders :'https://amsfullstack.herokuapp.com/providers',
-  urlauth:'https://amsfullstack.herokuapp.com/basicauth'
+  urlProviders :'http://127.0.0.1:8080/providers',
+  urlauth:'http://127.0.0.1:8080/basicauth',
+  urlRegistration: 'http://127.0.0.1:8080/registration'
 };

@@ -5,16 +5,17 @@
 <th>Name</th>
 <th>Email</th>
 <th>Adress</th>
-<th>Edit</th>
-<th>Delete</th>
+<th *ngIf="loginService.srole !='User'">Edit</th>
+<th *ngIf="loginService.srole !='User'">Delete</th>
+
 </tr>
 <tr *ngFor="let provider of providers">
 <td>{{provider.id}}</td>
 <td>{{provider.name}}</td>
 <td>{{provider.address}}</td>
 <td>{{provider.email}}</td>
-<td><button (click)="updateProvider(provider)"  class="btn btn-warning">Edit</button></td>
-<td><button (click)="deleteProvider(provider)"  class="btn btn-danger">Delete</button></td>
+<td *ngIf="loginService.srole !='User'"><button (click)="updateProvider(provider)"  class="btn btn-warning">Edit</button></td>
+<td *ngIf="loginService.srole !='User'"><button (click)="deleteProvider(provider)"  class="btn btn-danger">Delete</button></td>
 
 </tr>
 </table>

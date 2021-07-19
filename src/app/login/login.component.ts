@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Router, ActivatedRoute } from '@angular/router';
+import { NavbarComponent } from '../navbar/navbar.component';
 import { AuthenticationService } from '../services/authentication.service';
-
 
 @Component({
   selector: 'app-login',
@@ -10,32 +9,27 @@ import { AuthenticationService } from '../services/authentication.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
   username: string;
   password: string;
   invalidLogin = false;
   successMessage = "Authentication success";
   errorMessage = "Invalide username or password";
-  constructor(private router: Router,
-    private loginservice: AuthenticationService) { }
-  ngOnInit() {
+  constructor(private router: Router, private loginservice: AuthenticationService) { }
+  ngOnInit(): void {
   }
   checkLogin() {
 
-    (this.loginservice.authenticate(this.username, this.password).subscribe(
+    this.loginservice.authenticate(this.username, this.password).subscribe(
       data => {
-        this.router.navigate(['listProviders'])
-        this.invalidLogin = false
-      },
-      error => {
-        this.invalidLogin = true
-      }
-    )
-    );
-    /* if (this.loginservice.authenticate(this.username, this.password)) {
-       this.router.navigate(['listProviders'])
-       } else
-       this.invalidLogin = true*/
-  }
 
+        //solution sans refresh en se basant sur les variables du service
+        this.router.navigate(['/listProviders']);
+        //solution avec refresh
+        ///window.location.href ="listProvider";
+
+        this.invalidLogin = true;
+      },
+      error => { this.invalidLogin = true }
+    )
+  }
 }
