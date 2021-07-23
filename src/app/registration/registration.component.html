@@ -1,23 +1,26 @@
-<h1 align="center">Créer un nouveau compte</h1>
-<div class="register">
-<form #myform="ngForm" (ngSubmit)="createUser(myform)">
+
+<div class="container col-lg-6">
+<h1 align="center">Registration Form</h1>
+<div class="card">
+  <div class="card-body">
+<form #myform="ngForm" (ngSubmit)="createUser(myform)"  class="form-group"> 
   <div class="form-group">
     <label for="providerName">First Name </label>
-    <input ngModel name="name" size="20" type="text" class="form-control"  />
+    <input ngModel name="name" size="20" type="text" class="form-control"  placeholder="First Name" />
   </div>
 
   <div class="form-group">
     <label for="providerName">Last Name </label>
-    <input ngModel name="lname" size="20" type="text" class="form-control"  />
+    <input ngModel name="lname" size="20" type="text" class="form-control" placeholder="Last Name"  />
   </div>
 
   <div class="form-group">
     <label for="providerName">Username(email) </label>
-    <input ngModel name="username" size="20" type="text" class="form-control"  />
+    <input ngModel name="username" size="20" type="text" class="form-control" placeholder="Email"  />
   </div>
   <div class="form-group">
     <label for="providerEmail">Password </label>
-    <input ngModel name="password" size="20" type="text" class="form-control"  />
+    <input ngModel name="password" size="20" type="text" class="form-control"  placeholder="Password" />
   </div>
   <div class="form-group">
     <label for="providerAdress">Role </label>
@@ -28,7 +31,10 @@
       <option value="User">User</option>
     </select>
   </div>
-  <button class="btn btn-primary">Ajouter</button>
+  <div align="center">
+  <button class="btn btn-success col-lg-12" >Register</button></div>
 </form>
+  </div>
+</div>
 
 </div>

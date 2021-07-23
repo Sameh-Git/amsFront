@@ -19,16 +19,22 @@ export class AuthenticationService {
   constructor(private httpClient: HttpClient) { }
 
   authenticate(username, password) {
-    const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username +':'+ password) });
-    return this.httpClient.get(environment.urlAuth, { headers }).pipe
+    //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username +':'+ password) });
+    return this.httpClient.post(
+      environment.urlAuth,
+      {"username":username,
+      "password":password
+       }
+      ).pipe
       (
         map(
           userData => {
 
             sessionStorage.setItem('username', username);
-            sessionStorage.setItem('name', userData["name"]);
-            sessionStorage.setItem('lname', userData["lastName"]);
+            sessionStorage.setItem('name', userData["fname"]);
+            sessionStorage.setItem('lname', userData["lname"]);
             sessionStorage.setItem('role', userData["temp"]);
+            //sessionStorage.setItem('token', userData["jwttoken"]);
 
             this.susername =sessionStorage.getItem("username");
             this.sfname =sessionStorage.getItem("name");
@@ -39,8 +45,12 @@ export class AuthenticationService {
             //sessionStorage.setItem('password', password);
             //console.log(username + " " + password);
             console.log(userData);
-            let authString = 'Basic ' + btoa(username + ':' + password);
-            sessionStorage.setItem('basicauth', authString);
+             //Basic auth
+            ///let authString = 'Basic ' + btoa(username + ':' + password);
+
+            //JWT auth
+            let BearerToken = 'Bearer ' + userData["jwttoken"];
+            sessionStorage.setItem('bearerToken', BearerToken)
             return userData;
           }
         )
