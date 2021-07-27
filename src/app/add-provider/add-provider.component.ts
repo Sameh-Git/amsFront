@@ -13,14 +13,31 @@ export class AddProviderComponent implements OnInit {
 
   provider: any;
   
+  selectedFile: File;
   constructor(private service: ProviderService, private router : Router) { }
   ngOnInit(): void {}
-    
+  
+  public onFileChanged(event) {
+    //Select File
+    this.selectedFile = event.target.files[0];
+    console.log(this.selectedFile);
+  }
 
-  createProvider(myform: any) {
-    this.service.createProvider(myform).subscribe(
-    response => {
-    console.log(response);
+  createProvider(myform) {
+
+
+
+
+    const provider = new FormData();
+    provider.append('imageFile', this.selectedFile, this.selectedFile.name);
+    provider.append('imageName',this.selectedFile.name);
+    provider.append('name', myform.value.providerName);
+    provider.append('email', myform.value.providerEmail);
+    provider.append('address', myform.value.providerAdress);
+
+    this.service.createProvider(provider).subscribe(
+      (response) =>{
+        console.log(response);
     this.router.navigate(['listProviders']);
     }
     );

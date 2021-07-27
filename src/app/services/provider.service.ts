@@ -19,14 +19,10 @@ password = sessionStorage.getItem('password');
     return this.Http.get(environment.urlProviders + '/list', { headers });*/
     return this.Http.get(environment.urlProviders + '/list');
     }
-    createProvider(myform: { value: { providerName: any; providerEmail: any; providerAdress: any; }; }) {
+    createProvider(provider) {
       //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
-      this.provider = {
-      'name': myform.value.providerName,
-      'email': myform.value.providerEmail,
-      'address': myform.value.providerAdress
-      }
-      return this.Http.post(environment.urlProviders + '/add', this.provider );
+      
+      return this.Http.post(environment.urlProviders + '/add', provider );
       }
 
       deleteProvider(myObj: any) {
@@ -35,9 +31,9 @@ password = sessionStorage.getItem('password');
       }
 
      
-      updateProvider(myObj : any) {
+      updateProvider(myObj,id) {
         //const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
-        return this.Http.put(environment.urlProviders + '/' + myObj['id'], myObj);
+        return this.Http.put(environment.urlProviders + '/' + id, myObj);
         }
 
         getProvider(id : any) {

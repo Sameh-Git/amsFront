@@ -2,15 +2,17 @@
 <table class="table table-striped " >
 <tr>
 <th>Id</th>
+<th >Logo</th>
 <th>Name</th>
 <th>Email</th>
-<th>Adress</th>
+<th>Address</th>
 <th *ngIf="loginService.srole !='User'">Edit</th>
 <th *ngIf="loginService.srole !='User'">Delete</th>
 
 </tr>
 <tr *ngFor="let provider of providers">
 <td>{{provider.id}}</td>
+<td><img src="http://127.0.0.1:1027/uploads/{{provider.logo}}" width="60" height="40" /></td>
 <td>{{provider.name}}</td>
 <td>{{provider.address}}</td>
 <td>{{provider.email}}</td>
