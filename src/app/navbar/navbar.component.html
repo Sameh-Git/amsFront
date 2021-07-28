@@ -1,31 +1,125 @@
+<div class="nav-header" *ngIf="loginService.isUserLoggedIn()" style="background-color:white">
+  
+      
+         
+          <span class="brand-title">
+              <img src="../../assets/images/sip.png" width="230" height="100">
+          </span>
+    
+  
+</div>
 
-<div align="right" *ngIf="loginService.isUserLoggedIn()" style="padding-right:20px; background-color:blanchedalmond;">You are : {{ loginService.sfname +" "+ loginService.slname}}, Connected as : {{loginService.susername}}</div>
 
-   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">Providers</a>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
   
-  
-  
-        <a class="nav-item nav-link" routerLink="/listProviders" *ngIf="loginService.isUserLoggedIn()"
-          routerLinkActive="active">Liste</a>
-          <a class="nav-item nav-link" routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn() && loginService.srole=='SuperAdmin'"
-          routerLinkActive="active">Ajouter</a>
-        <a class="nav-item nav-link" routerLink="/login" *ngIf="!loginService.isUserLoggedIn()"
-          routerLinkActive="active">Login</a>
-          <a class="nav-item nav-link" routerLink="/registration" *ngIf="!loginService.isUserLoggedIn()"
-          routerLinkActive="active">Registration</a>
-        <a class="nav-item nav-link" routerLink="/logout" *ngIf="loginService.isUserLoggedIn()"
-          routerLinkActive="active">LogOut</a>
-  
+
+ <div class="header" *ngIf="loginService.isUserLoggedIn()">    
+  <div class="header-content clearfix">
+      
+    <div class="header-left">
+      <div class="input-group icons">
+         
+          <h2 style="color:cornflowerblue;">Welcome to our Article Managment System Dashboard</h2>
+        </div>
+      
+  </div>
+    
+      <div class="header-right">
+        
+          <ul class="clearfix">
+         
+              
+              <li class="icons dropdown d-none d-md-flex">
+                
+                    <span align="right"  style="color: #7660C2;" >{{ loginService.sfname +" "+ loginService.slname}}
+                    </span>
+                  
+                 
+              </li>
+              <li class="icons dropdown">
+              <div class="dropdown" style="float:right;padding-right:0px" >
+ 
+              
+                <img src="../../assets/images/user1.png" class="dropbtn"
+                   width="40" height="40" alt="Logo" />
+                   
+                   
+       
+               
+         <div class="dropdown-content">
+           <a routerLink="" ><span><img src="../../assets/images/user.png" width="16" height="18"/>  Profile </span></a>
+           <a routerLink="/logout" ><span><img src="../../assets/images/logout.png" width="16" height="18"/> Logout </span></a>
+         </div>
+       </div>
+
+              </li> 
+          </ul>
       </div>
-    </div>
-  </nav>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="nk-sidebar" *ngIf="loginService.isUserLoggedIn()" style="height: 100%;">           
+  <div class="nk-nav-scroll">
+      <ul class="metismenu" id="menu">
+          <li class="nav-label">Dashboard</li>
+          <li>
+              <a  routerLink="/listProviders" >
+                <img src="../../assets/images/list.png" width="20" height="20"/>&nbsp;<span class="nav-text">List Providers</span>
+              </a>
+             
+          </li>
+          <li>
+            <a  routerLink="" >
+              <img src="../../assets/images/list2.png" width="20" height="20"/>&nbsp;<span class="nav-text">List Articles</span>
+            </a>
+           
+        </li>
+          <li>
+            <a  routerLink="" >
+              <img src="../../assets/images/user.png" width="16" height="18"/>&nbsp; <span class="nav-text">User Profile</span>
+            </a>
+           
+        </li>
+        <li>
+          <a  routerLink="" >
+            <img src="../../assets/images/map2.png" width="16" height="18"/>&nbsp; <span class="nav-text">Map</span>
+          </a>
+         
+      </li>
+      </ul>
+  </div>
+</div>  
+  
+<div class="content-body" style="padding-bottom: 500px;">
+ 
+
+  
+   <div >
+    <router-outlet  ></router-outlet> </div>
+ 
+</div>
+
+<footer *ngIf="loginService.isUserLoggedIn()"   align="center">
+  
+      <p align="center" >© 2019 SIP  Connected as :  <span style="color:darkblue">{{loginService.susername}} </span> Roles: <span style="color:darkblue">{{loginService.srole}}</span></p>
+  
+</footer>
+
+
    
-    <router-outlet  ></router-outlet>
-  
-  
 
+    <script src="../../assets/js/dashboard/dashboard-1.js"></script>
 
-    <div *ngIf="loginService.isUserLoggedIn()" align="center" style="background-color: aquamarine;">You are logged in as : {{loginService.srole}}</div>
+    

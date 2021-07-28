@@ -1,18 +1,39 @@
-<h2 align="center">List of Providers</h2>
-<table class="table table-striped " >
+<div class="container" style="padding-top: 30px;padding-left: 100px; ;" align="center">
+       <div class="card" >  
+            <h1 align="center" style="color:#101092;padding-top:5px;">List of Providers</h1>
+
+
+
+            <div class="card-body" align="center" >
+                <div class="my-5" align="right">
+
+                    <a routerLink="/addProvider" *ngIf="loginService.isUserLoggedIn() && loginService.srole=='SuperAdmin'" class="btn btn-primary">
+                        <img src="../../assets/images/add.png" width="30" height="30" alt="Logo" />
+                        Add Provider</a>
+                </div>
+                <div class="col-md-10">
+                   
+
+                   
+
+
+                     
+                            <div class="table-responsive">
+                                <table class="table table-striped table-bordered zero-configuration"  >
 <tr>
-<th>Id</th>
+
 <th >Logo</th>
 <th>Name</th>
-<th>Email</th>
 <th>Address</th>
+<th>Email</th>
+
 <th *ngIf="loginService.srole !='User'">Edit</th>
 <th *ngIf="loginService.srole !='User'">Delete</th>
 
 </tr>
 <tr *ngFor="let provider of providers">
-<td>{{provider.id}}</td>
-<td><img src="http://127.0.0.1:1027/uploads/{{provider.logo}}" width="60" height="40" /></td>
+
+<td><img src="http://127.0.0.1:8080/uploads/{{provider.logo}}" width="60" height="40" /></td>
 <td>{{provider.name}}</td>
 <td>{{provider.address}}</td>
 <td>{{provider.email}}</td>
@@ -21,3 +42,5 @@
 
 </tr>
 </table>
+</div>
+</div></div></div>  </div>

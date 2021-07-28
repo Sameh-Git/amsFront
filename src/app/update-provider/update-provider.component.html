@@ -1,30 +1,60 @@
-<h3 style="padding-bottom:20px;padding-top:10px;color:#101092;" > Update Provider</h3>
-<form (ngSubmit)="updateProvider()">
-    <div class="form-group col-lg-3">
-    <label for="providerName">Provider Name </label>
-    <input [(ngModel)] ="name" name="providerName" size="20" type="text" class="form-control" id="providerName" />
-   
+<div class="container my-5" align="center" style="padding-bottom:0px;padding-top:0px;">
+
+    <div class="card col-md-6">
+        <div class="card-body  col-md-12">
+            <div class="col-md-12" align="left">
+                <h3 align="center" style="padding-bottom:20px;padding-top:0px;color:#101092;"> Update Provider</h3>
+
+
+                <div class="form-validation">
+                    <form (ngSubmit)="updateProvider()">
+                        <div class="form-group row">
+                            <label for="providerName" class="col-lg-4 col-form-label">Provider Name </label>
+                            <div class="col-lg-12">          <input [(ngModel)]="name" name="providerName" size="20" type="text" class="form-control"
+                                id="providerName" /></div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="providerEmail" class="col-lg-4 col-form-label">Provider Email </label>
+                            <div class="col-lg-12">   
+                                  <input [(ngModel)]="email" name="providerEmail" size="20" type="text" class="form-control"
+                                id="providerEmail" /></div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="providerAdress" class="col-lg-4 col-form-label">Provider Adresse </label>
+                            <div class="col-lg-12">
+                                      <input [(ngModel)]="adress" name="providerAdress" size="20" type="text" class="form-control"
+                                id="providerAdress" /></div>
+                        </div>
+                        <div class="form-group row">
+
+                            <label for="providerImage" class="col-lg-12 col-form-label">Old Provider Logo <img
+                                    src="http://127.0.0.1:8080/uploads/{{nomImage}}" width="80" height="50" />
+                            </label>
+                        </div>
+                        <div class="form-group row">
+
+                            <label for="providerImage" class="col-lg-12 col-form-label">New Provider Logo </label>
+                            <div class="col-lg-12">
+                            <input ngModel name="providerImage" class="form-control" placeholder="Image" type="file"
+                                (change)="onFileChanged($event)">
+</div>
+                        </div>
+                        <input [(ngModel)]="id" name="providerId" type="hidden" />
+                        <div class="col-md-12 ml-auto" align="center" style="padding-bottom:0px;padding-top:4px;">
+                            <button class="btn btn-primary" style="width: 150px;">Update</button>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+
+
+                            <a routerLink="/listProviders"> <input type="button" class="btn btn-primary"
+                                    style="width: 150px;" value="Cancel"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="form-group col-lg-3">
-    <label for="providerEmail">Provider Email </label>
-    <input [(ngModel)] ="email" name="providerEmail" size="20" type="text"
-    class="form-control" id="providerEmail" />
 </div>
-<div class="form-group col-lg-3">
-<label for="providerAdress">Provider Adresse </label>
-<input [(ngModel)] ="adress" name="providerAdress" size="20" type="text" class="form-control" id="providerAdress" />
-</div>
-<div class="form-group col-lg-3">
- 
-    <label for="providerImage">Old Provider Logo  <img src="http://127.0.0.1:1027/uploads/{{nomImage}}"  width="80" height="50" />
-    </label></div>
-<div class="form-group col-lg-3">
- 
-    <label for="providerImage">New Provider Logo </label>
-    
-    <input ngModel name="providerImage" class="form-control" placeholder="Image" type="file" (change)="onFileChanged($event)">
-  
-</div>
-<input [(ngModel)]="id" name="providerId" type="hidden"/>
-<div style="padding-top:11px;" >
-<button  class="btn btn-primary">Update</button></div></form>

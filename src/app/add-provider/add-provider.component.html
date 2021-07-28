@@ -1,27 +1,58 @@
-<h3 style="padding-bottom:20px;padding-top:8px;color:#101092;"> Add Provider</h3>
-<form #myform="ngForm" (ngSubmit)="createProvider(myform)" class="form-valide">
-    <div class="form-group col-lg-3">
-        <label for="providerName">Provider Name </label>
-        <input ngModel name="providerName" size="20" type="text" class="form-control" id="providerName" />
-    </div>
-    <div class="form-group col-lg-3">
-        <label for="providerEmail">Provider Email </label>
-        <input ngModel name="providerEmail" size="20" type="text" class="form-control" id="providerEmail" />
-    </div>
-    <div class="form-group col-lg-3">
-        <label for="providerAdress">Provider Adresse </label>
-        <input ngModel name="providerAdress" size="20" type="text" class="form-control" id="providerAdress" />
-    </div>
-    <div class="form-group col-lg-3">
+<div class="container my-5" align="center" style="padding-bottom:0px;padding-top:0px;">
+
+    <div class="card col-md-6">
+        <div class="card-body  col-md-12">
+            <div class="col-md-12" align="left">
+                <h3 align="center" style="padding-bottom:20px;padding-top:0px;color:#101092;"> Add Provider</h3>
 
 
-        <label for="providerImage">Provider Logo </label>
+                <div class="form-validation">
+                    <form #myform="ngForm" (ngSubmit)="createProvider(myform)" class="form-valide">
+                        <div class="form-group row">
+                            <label for="providerName" class="col-lg-4 col-form-label">Provider Name </label>
+                            <div class="col-lg-12"> <input ngModel name="providerName" size="20" type="text"
+                                    class="form-control" id="providerName" placeholder="Enter Name" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+                            <label for="providerEmail" class="col-lg-4 col-form-label">Provider Email </label>
+                            <div class="col-lg-12">
+                                <input ngModel name="providerEmail" size="20" type="text" class="form-control"
+                                    id="providerEmail" placeholder="Enter Email" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
 
-        <input ngModel name="providerImage" class="form-control" placeholder="Image" type="file"
-            (change)="onFileChanged($event)">
+                            <label for="providerAdress" class="col-lg-6 col-form-label">Provider Adresse </label>
+                            <div class="col-lg-12">
+                                <input ngModel name="providerAdress" size="20" type="text" class="form-control"
+                                    id="providerAdress" placeholder="Enter Address" />
+                            </div>
+                        </div>
+                        <div class="form-group row">
+
+
+                            <label for="providerImage" class="col-lg-4 col-form-label">Provider Logo </label>
+                            <div class="col-lg-12">
+                                <input ngModel name="providerImage" class="form-control" placeholder="Image" type="file"
+                                    (change)="onFileChanged($event)">
+                            </div>
+                        </div>
+
+                        <div class="col-md-12 ml-auto" align="center" style="padding-bottom:0px;padding-top:4px;">
+                            <button class="btn btn-primary" style="width: 150px;">Add</button>
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+                            &nbsp;
+
+
+                            <a routerLink="/listProviders"> <input type="button" class="btn btn-primary"
+                                    style="width: 150px;" value="Cancel"></a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <div style="padding-top:11px;">
-        <button class="btn btn-primary">Ajouter</button>
-    </div>
-</form>
+</div>
