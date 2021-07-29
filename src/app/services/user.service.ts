@@ -19,7 +19,11 @@ export class UserService {
 
       return this.Http.put(environment.urlUsers + '/' + id, myObj);
       }
+      updateUserPicture(myObj,id) {
 
+        return this.Http.put(environment.urlUsers + '/pic/' + id, myObj);
+        }
+  
       getUser(id : any) {
       
           return this.Http.get(environment.urlUsers + '/' + id)

@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit {
         //solution sans refresh en se basant sur les variables du service
         this.router.navigate(['/listProviders']);
         //solution avec refresh
-        ///window.location.href ="listProvider";
+        
 
         this.invalidLogin = true;
       },

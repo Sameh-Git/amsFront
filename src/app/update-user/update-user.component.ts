@@ -15,6 +15,8 @@ export class UpdateUserComponent implements OnInit {
   name: any;
   email: any;
   password: any;
+  nomImage;
+  selectedFile: File;
   constructor(private service: UserService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -28,6 +30,8 @@ export class UpdateUserComponent implements OnInit {
             this.email = response["email"];
             
             this.name = response["name"];
+            this.nomImage = response["picture"];
+
           }
         );  }
     ); }
@@ -47,6 +51,7 @@ export class UpdateUserComponent implements OnInit {
       user.append('email', this.email);
       user.append('password', this.password);
       user.append('id', this.id);
+      
   
   
       
@@ -54,6 +59,42 @@ export class UpdateUserComponent implements OnInit {
         response => {
           console.log(response);
           alert("Successful modification!")
+         
+
+        }
+      );
+  
+    }
+
+    public onFileChanged(event) {
+      //Select File
+      this.selectedFile = event.target.files[0];
+      console.log(this.selectedFile);
+    }
+
+
+    
+    updateUserPicture() {
+      this.userToUpdate = {
+        'name': this.name,
+        'lastName': this.lastName,
+        'email': this.email,
+        'password': this.password,
+        'id': this.id
+      }
+      const user = new FormData();
+     
+      
+      user.append('imageFile', this.selectedFile, this.selectedFile.name);
+    user.append('imageName',this.selectedFile.name);
+  
+  
+      
+        this.service.updateUserPicture(user,this.id).subscribe(
+        response => {
+          console.log(response);
+          alert("Successful modification!")
+          window.location.href ="updateUser/"+this.id;
         }
       );
   

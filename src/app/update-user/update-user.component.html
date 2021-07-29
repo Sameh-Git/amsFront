@@ -1,5 +1,9 @@
-<div class="container my-5" align="center" style="padding-bottom:0px;padding-top:0px;">
-
+<div class="container my-5" align="center" style="padding-bottom:0px;padding-left:100px;">
+    <div class="row">
+        
+        
+            
+        
     <div class="card col-md-6">
         <div class="card-body  col-md-12">
             <div class="col-md-12" align="left">
@@ -32,10 +36,9 @@
                                 id="password" /></div>
 
                         </div>
-
-                        
                       
-                        
+                     
+
                         <input [(ngModel)]="id" name="userId" type="hidden" />
                         <div  align="center" class=" form-group" >
                             <button class="btn btn-primary col-lg-12" >Save</button>
@@ -44,8 +47,40 @@
                      
                         </div>
                     </form>
+                   
                 </div>
             </div>
         </div>
     </div>
+
+    <div class="col-lg-6 col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <h3 align="center" style="padding-bottom:70px;padding-top:0px;color:#101092;"> Profile Photo</h3>
+          
+                <form (ngSubmit)="updateUserPicture()" style="padding-bottom: 120px;">
+                     
+                    <div class="form-group row" algn="center">
+
+                        <label for="userImage" class="col-lg-12 col-form-label" align="center">
+                            Picture </label>
+                           <div align="center" class="col-lg-12"> 
+                               <img  src="http://127.0.0.1:8080/images/user/{{nomImage}}"  align="center" width="100" height="100" />
+                        
+                    </div></div>
+                    <div class="form-group row">
+
+                        <label for="userImage" class="col-lg-12 col-form-label" align="left">New Picture </label>
+                        <div class="col-lg-12">
+                        <input ngModel name="userImage" class="form-control" placeholder="Image" type="file"
+                            (change)="onFileChanged($event)">
 </div>
+                    </div>
+                    <input [(ngModel)]="id" name="userId" type="hidden" />
+                    <button class="btn btn-primary col-lg-12" align="center">Update Picture</button>
+                </form>  
+            </div>
+        </div>
+        
+    </div>  
+</div></div>

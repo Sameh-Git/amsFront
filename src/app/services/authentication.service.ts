@@ -14,6 +14,8 @@ export class AuthenticationService {
   public slname = sessionStorage.getItem("lname");
   public srole = sessionStorage.getItem("role");
   public id=sessionStorage.getItem("id");
+  public picture=sessionStorage.getItem("picture");
+  
 
 
 
@@ -36,6 +38,7 @@ export class AuthenticationService {
             sessionStorage.setItem('lname', userData["lname"]);
             sessionStorage.setItem('role', userData["temp"]);
             sessionStorage.setItem('id', userData["id"]);
+            sessionStorage.setItem('picture', userData["picture"]);
             //sessionStorage.setItem('token', userData["jwttoken"]);
 
             this.susername =sessionStorage.getItem("username");
@@ -43,6 +46,7 @@ export class AuthenticationService {
             this.slname =sessionStorage.getItem("lname");
             this.srole =sessionStorage.getItem("role");
             this.id=sessionStorage.getItem("id");
+            this.picture=sessionStorage.getItem("picture");
             //NavbarComponent.user = sessionStorage.getItem('username');
             //sessionStorage.setItem('password', password);
             //console.log(username + " " + password);

@@ -1,3 +1,5 @@
+
+
 <div class="nav-header" *ngIf="loginService.isUserLoggedIn()" style="background-color:white">
   
       
@@ -38,15 +40,14 @@
               <li class="icons dropdown">
               <div class="dropdown" style="float:right;padding-right:0px" >
  
-              
-                <img src="../../assets/images/user1.png" class="dropbtn"
+                <img src="http://127.0.0.1:8080/images/user/{{loginService.picture}}" class="dropbtn"
                    width="40" height="40" alt="Logo" />
                    
                    
        
                
          <div class="dropdown-content">
-           <a routerLink="" ><span><img src="../../assets/images/user.png" width="16" height="18"/>  Profile </span></a>
+           <a routerLink="updateUser/{{ loginService.id}}"  ><span><img src="../../assets/images/user.png" width="16" height="18"/>  Profile </span></a>
            <a routerLink="/logout" ><span><img src="../../assets/images/logout.png" width="16" height="18"/> Logout </span></a>
          </div>
        </div>
