@@ -13,6 +13,7 @@ export class AuthenticationService {
   public sfname = sessionStorage.getItem("name");
   public slname = sessionStorage.getItem("lname");
   public srole = sessionStorage.getItem("role");
+  public id=sessionStorage.getItem("id");
 
 
 
@@ -34,13 +35,14 @@ export class AuthenticationService {
             sessionStorage.setItem('name', userData["fname"]);
             sessionStorage.setItem('lname', userData["lname"]);
             sessionStorage.setItem('role', userData["temp"]);
+            sessionStorage.setItem('id', userData["id"]);
             //sessionStorage.setItem('token', userData["jwttoken"]);
 
             this.susername =sessionStorage.getItem("username");
             this.sfname =sessionStorage.getItem("name");
             this.slname =sessionStorage.getItem("lname");
             this.srole =sessionStorage.getItem("role");
-
+            this.id=sessionStorage.getItem("id");
             //NavbarComponent.user = sessionStorage.getItem('username');
             //sessionStorage.setItem('password', password);
             //console.log(username + " " + password);

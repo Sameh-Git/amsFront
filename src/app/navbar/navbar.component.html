@@ -86,12 +86,19 @@
             </a>
            
         </li>
-          <li>
-            <a  routerLink="" >
-              <img src="../../assets/images/user.png" width="16" height="18"/>&nbsp; <span class="nav-text">User Profile</span>
+          <li *ngIf="loginService.isUserLoggedIn() && loginService.srole=='SuperAdmin'">
+            <a  routerLink="/listUsers" >
+              <img src="../../assets/images/users.png" width="18" height="18"/>&nbsp; <span class="nav-text">List Users</span>
             </a>
            
         </li>
+
+        <li>
+          <a  routerLink="updateUser/{{ loginService.id}}" >
+            <img src="../../assets/images/user.png" width="16" height="18"/>&nbsp; <span class="nav-text">User Profile</span>
+          </a>
+         
+      </li>
         <li>
           <a  routerLink="" >
             <img src="../../assets/images/map2.png" width="16" height="18"/>&nbsp; <span class="nav-text">Map</span>

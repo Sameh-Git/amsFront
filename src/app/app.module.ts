@@ -16,7 +16,9 @@ import { LogoutComponent } from './logout/logout.component';
 
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import{BasicAuthInterceptorService} from  './services/basic-auth-interceptor.service';
-import { RegistrationComponent } from './registration/registration.component'
+import { RegistrationComponent } from './registration/registration.component';
+import { ListUserComponent } from './list-user/list-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component'
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { RegistrationComponent } from './registration/registration.component'
     UpdateProviderComponent,
     LoginComponent,
     LogoutComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ListUserComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
   invalidLogin = false;
   successMessage = "Authentication success";
   errorMessage = "Invalide username or password";
-  constructor(private router: Router, private loginservice: AuthenticationService) { }
+  constructor(private router: Router, public loginservice: AuthenticationService) { }
   ngOnInit(): void {
   }
   checkLogin() {

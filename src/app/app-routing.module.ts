@@ -9,15 +9,21 @@ import { LogoutComponent } from './logout/logout.component';
 import { AuthGaurdService } from './services/authgaurd.service';
 import { UpdateProviderComponent } from './update-provider/update-provider.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ListUserComponent } from './list-user/list-user.component';
+import { UpdateUserComponent } from './update-user/update-user.component';
 
 
 const routes: Routes = [
   
   { path: "", pathMatch: "full", redirectTo: "app-navbar" },
     { path: "listProviders", component: ListProviderComponent , canActivate: [AuthGaurdService]},
+    
+    { path: "listUsers", component: ListUserComponent , canActivate: [AuthGaurdService]},
     { path: "addProvider", component: AddProviderComponent, canActivate: [AuthGaurdService] },
     { path: "updateProvider/:id", component: UpdateProviderComponent, canActivate: [AuthGaurdService] },
+    { path: "updateUser/:id", component: UpdateUserComponent, canActivate: [AuthGaurdService] },
     { path: 'login', component: LoginComponent },
+    { path: '', component: LoginComponent },
     { path: 'registration', component: RegistrationComponent },
     { path: 'logout', component: LogoutComponent , canActivate: [AuthGaurdService]},
     {path:"contact", component:ContactComponent},

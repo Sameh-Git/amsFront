@@ -1,0 +1,51 @@
+<div class="container my-5" align="center" style="padding-bottom:0px;padding-top:0px;">
+
+    <div class="card col-md-6">
+        <div class="card-body  col-md-12">
+            <div class="col-md-12" align="left">
+                <h3 align="center" style="padding-bottom:20px;padding-top:0px;color:#101092;"> Personal Information</h3>
+
+
+                <div class="form-validation">
+                    <form (ngSubmit)="updateUser()">
+                        <div class="form-group row">
+                            <label for="firstname" class="col-lg-4 col-form-label">First Name </label>
+                            <div class="col-lg-12">          <input [(ngModel)]="name" name="firstname" size="20" type="text" class="form-control"
+                                id="firstname" /></div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="lastName" class="col-lg-4 col-form-label">Last Name </label>
+                            <div class="col-lg-12">          <input [(ngModel)]="lastName" name="lastName" size="20" type="text" class="form-control"
+                                id="lastName" /></div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="email" class="col-lg-4 col-form-label">Email </label>
+                            <div class="col-lg-12">          <input [(ngModel)]="email" name="email" size="20" type="text" class="form-control"
+                                id="email" /></div>
+
+                        </div>
+                        <div class="form-group row">
+                            <label for="password" class="col-lg-4 col-form-label">New Password </label>
+                            <div class="col-lg-12">          <input [(ngModel)]="password" name="password" size="20" type="password" class="form-control"
+                                id="password" /></div>
+
+                        </div>
+
+                        
+                      
+                        
+                        <input [(ngModel)]="id" name="userId" type="hidden" />
+                        <div  align="center" class=" form-group" >
+                            <button class="btn btn-primary col-lg-12" >Save</button>
+                         
+
+                     
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
