@@ -22,7 +22,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { MapComponent } from './map/map.component';
 import { ListArticleComponent } from './list-article/list-article.component';
 import { UpdateArticleComponent } from './update-article/update-article.component';
-import { AddArticleComponent } from './add-article/add-article.component'
+import { AddArticleComponent } from './add-article/add-article.component';
+import { ShowProviderComponent } from './show-provider/show-provider.component'
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { AddArticleComponent } from './add-article/add-article.component'
     MapComponent,
     ListArticleComponent,
     UpdateArticleComponent,
-    AddArticleComponent
+    AddArticleComponent,
+    ShowProviderComponent
   ],
   imports: [
     BrowserModule,

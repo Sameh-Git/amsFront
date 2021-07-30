@@ -15,6 +15,7 @@ import { MapComponent } from './map/map.component';
 import { AddArticleComponent } from './add-article/add-article.component';
 import { UpdateArticleComponent } from './update-article/update-article.component';
 import { ListArticleComponent } from './list-article/list-article.component';
+import { ShowProviderComponent } from './show-provider/show-provider.component';
 
 
 const routes: Routes = [
@@ -36,6 +37,7 @@ const routes: Routes = [
     { path: "listArticle", component: ListArticleComponent , canActivate: [AuthGaurdService]},
     { path: "addArticle", component: AddArticleComponent, canActivate: [AuthGaurdService] },
     { path: "updateArticle/:id", component: UpdateArticleComponent, canActivate: [AuthGaurdService] },
+    { path: "showProvider/:id", component: ShowProviderComponent, canActivate: [AuthGaurdService] },
   ];
     
 

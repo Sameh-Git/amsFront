@@ -17,6 +17,7 @@ export class ListArticleComponent implements OnInit {
 
 
     this.refreshListArticles();
+   
   }
 
 
@@ -34,6 +35,8 @@ export class ListArticleComponent implements OnInit {
         this.articles = response;
       }
     );
+    if(this.articles.size()==0){
+    this.articles=null;}
   }
   updateArticle(myObj) {
     this.router.navigate(['updateArticle' + '/' + myObj['id']]);

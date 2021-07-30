@@ -40,4 +40,12 @@ password = sessionStorage.getItem('password');
         //  const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
           return this.Http.get(environment.urlProviders + '/' + id)
           }
+
+
+         
+
+              getArticles(id : any) {
+                //  const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(this.username + ':' + this.password) });
+                  return this.Http.get(environment.urlProviders + '/get/' + id)
+                  }
 }
