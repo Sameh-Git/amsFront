@@ -11,6 +11,10 @@ import { UpdateProviderComponent } from './update-provider/update-provider.compo
 import { RegistrationComponent } from './registration/registration.component';
 import { ListUserComponent } from './list-user/list-user.component';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { MapComponent } from './map/map.component';
+import { AddArticleComponent } from './add-article/add-article.component';
+import { UpdateArticleComponent } from './update-article/update-article.component';
+import { ListArticleComponent } from './list-article/list-article.component';
 
 
 const routes: Routes = [
@@ -27,7 +31,13 @@ const routes: Routes = [
     { path: 'registration', component: RegistrationComponent },
     { path: 'logout', component: LogoutComponent , canActivate: [AuthGaurdService]},
     {path:"contact", component:ContactComponent},
-    {path:"home",component:HomeComponent}];
+    { path: "map", component: MapComponent, canActivate: [AuthGaurdService] },
+    {path:"home",component:HomeComponent},
+    { path: "listArticle", component: ListArticleComponent , canActivate: [AuthGaurdService]},
+    { path: "addArticle", component: AddArticleComponent, canActivate: [AuthGaurdService] },
+    { path: "updateArticle/:id", component: UpdateArticleComponent, canActivate: [AuthGaurdService] },
+  ];
+    
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

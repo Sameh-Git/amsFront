@@ -18,7 +18,11 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import{BasicAuthInterceptorService} from  './services/basic-auth-interceptor.service';
 import { RegistrationComponent } from './registration/registration.component';
 import { ListUserComponent } from './list-user/list-user.component';
-import { UpdateUserComponent } from './update-user/update-user.component'
+import { UpdateUserComponent } from './update-user/update-user.component';
+import { MapComponent } from './map/map.component';
+import { ListArticleComponent } from './list-article/list-article.component';
+import { UpdateArticleComponent } from './update-article/update-article.component';
+import { AddArticleComponent } from './add-article/add-article.component'
 
 @NgModule({
   declarations: [
@@ -34,7 +38,11 @@ import { UpdateUserComponent } from './update-user/update-user.component'
     LogoutComponent,
     RegistrationComponent,
     ListUserComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    MapComponent,
+    ListArticleComponent,
+    UpdateArticleComponent,
+    AddArticleComponent
   ],
   imports: [
     BrowserModule,

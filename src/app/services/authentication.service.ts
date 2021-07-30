@@ -46,6 +46,7 @@ export class AuthenticationService {
             this.slname =sessionStorage.getItem("lname");
             this.srole =sessionStorage.getItem("role");
             this.id=sessionStorage.getItem("id");
+            
             this.picture=sessionStorage.getItem("picture");
             //NavbarComponent.user = sessionStorage.getItem('username');
             //sessionStorage.setItem('password', password);

@@ -9,6 +9,7 @@ export const environment = {
   
   urlRegistration: 'http://127.0.0.1:8080/registration',
   urlUsers :'http://127.0.0.1:8080/users',
+  urlArticles :'http://127.0.0.1:8080/articles',
 };
 
 /*
