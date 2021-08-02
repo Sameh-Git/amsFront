@@ -1,5 +1,5 @@
 
-<div class="login-form-bg h-100" style="padding-top: 50px; padding-left: 30px; padding-right: 230px;">
+<div class="login-form-bg h-100" style="padding-top: 35px; padding-left: 30px; padding-right: 230px;">
   <div class="container h-100">
     <div class="row justify-content-center h-100">
       <div class="col-xl-6">
@@ -8,29 +8,29 @@
             <div class="card-body pt-3">
 
               <h2 align="center">Registration Form</h2>
-<form #myform="ngForm" (ngSubmit)="createUser(myform)"  class="form-group"> 
+<form #myform="ngForm" (ngSubmit)="createUser(myform)"  class="mt-5 mb-5 login-input"> 
   <div class="form-group">
-    <label for="providerName">First Name </label>
+   
     <input ngModel name="name" size="20" type="text" class="form-control"  placeholder="First Name" />
   </div>
 
   <div class="form-group">
-    <label for="providerName">Last Name </label>
+    
     <input ngModel name="lname" size="20" type="text" class="form-control" placeholder="Last Name"  />
   </div>
 
   <div class="form-group">
-    <label for="providerName">Username(email) </label>
+
     <input ngModel name="username" size="20" type="text" class="form-control" placeholder="Email"  />
   </div>
   <div class="form-group">
-    <label for="providerEmail">Password </label>
+  
     <input ngModel name="password" size="20" type="password" class="form-control"  placeholder="Password" />
   </div>
   <div class="form-group">
-    <label for="providerAdress">Role </label>
+   
     <select ngModel name="role"  class="form-control"  >
-      <option value="">Choir votre role</option>
+      <option value="">Choose your role</option>
       <option value="Admin">Admin</option>
       <option value="SuperAdmin">SuperAdmin</option>
       <option value="User">User</option>
@@ -39,7 +39,7 @@
   <div align="center">
   <button class="btn btn-primary col-lg-12" >Register</button></div>
 </form>
-<p class="login-form__footer" align="center">Have account <a routerLink="/login" class="text-primary">Sign in </a> now</p>
+<p class="login-form__footer" align="center" style="padding-bottom: 0px;">Have account <a routerLink="/login" class="text-primary">Sign in </a> now</p>
 
   </div>
 </div>
